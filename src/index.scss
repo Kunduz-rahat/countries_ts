@@ -18,7 +18,8 @@ body {
   font-family: $font-family;
   font-weight: 400;
   line-height: 1.5;
-
   background-color: $body-bg;
   color: $text-color;
+  max-width: 1440px;
+  margin: 0 auto;
 }

@@ -1,0 +1,14 @@
+@use "../../scss/" as *;
+
+.header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: $box-shadow;
+	padding: 10px;
+	height: 80px;
+	p{
+		cursor: pointer;
+	}
+
+}
