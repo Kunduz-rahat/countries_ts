@@ -18,9 +18,9 @@ export const countriesReducer = (
     case CountriesActionTypes.FETCH_COUNTRIES_REQUEST:
       return { loading: true, countries: [], error: null };
     case CountriesActionTypes.FETCH_COUNTRIES_ERROR:
-      return { loading: true, countries: [], error: action.payload };
+      return { loading: false, countries: [], error: action.payload };
     case CountriesActionTypes.FETCH_COUNTRIES_SUCCESS:
-      return { loading: true, countries: action.payload, error: null };
+      return { loading: false, countries: action.payload, error: null };
     default:
       return state;
   }

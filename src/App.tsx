@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CountriesList from './components/CountriesList';
 
 export const App = () => {
   return (
-    <div>App</div>
-  )
-}
-
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<CountriesList />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
