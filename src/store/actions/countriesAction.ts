@@ -7,10 +7,10 @@ export const fetchCountries = () => {
   return async (dispatch: Dispatch<CountriesAction>) => {
     try {
       dispatch({ type: CountriesActionTypes.FETCH_COUNTRIES_REQUEST });
-      const { data } = await axios(ALL_COUNTRIES);
+      const res = await axios(ALL_COUNTRIES);
       dispatch({
         type: CountriesActionTypes.FETCH_COUNTRIES_SUCCESS,
-        payload: data,
+        payload: res.data
       });
     } catch (e) {
       dispatch({

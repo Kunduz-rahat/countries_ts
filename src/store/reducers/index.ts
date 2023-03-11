@@ -3,7 +3,7 @@ import { countriesReducer } from "./countriesReducer";
 
 
 export const rootReducer =combineReducers({
-	counties:countriesReducer
+	countries:countriesReducer
 })
 
 
