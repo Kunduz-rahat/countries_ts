@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import CountriesList from './components/CountriesList';
+import CountriesList from './pages/CountriesList';
 
 import Header from './components/Header';
+import { CountryInfo } from './pages/CountryInfo';
 
 export const App = () => {
   return (
@@ -10,6 +11,7 @@ export const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<CountriesList />} />
+        <Route path="/:id" element={<CountryInfo />} />
       </Routes>
     </BrowserRouter>
   );
