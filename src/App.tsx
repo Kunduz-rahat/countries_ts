@@ -11,7 +11,7 @@ export const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<CountriesList />} />
-        <Route path="/:id" element={<CountryInfo />} />
+        <Route path="/:name" element={<CountryInfo />} />
       </Routes>
     </BrowserRouter>
   );

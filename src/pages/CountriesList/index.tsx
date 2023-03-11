@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import { useActions } from "../../hooks/useAction";
+import { Link } from "react-router-dom";
+import { useActions } from "../../hooks/useActions";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { Spinner } from "../../components/Spinner";
 import "./index.scss";
-import { Link } from "react-router-dom";
+
 
 const CountriesList: React.FC = () => {
   const { countries, loading, error } = useTypedSelector(
@@ -21,14 +22,14 @@ const CountriesList: React.FC = () => {
 
   return (
     <div className="country">
-      {countries.map((country, idx) => (
-        <Link key={idx} className='country_card' to={`/:${country.id}`}>
+      {countries.map((c:any, idx:number) => (
+        <Link key={idx} className='country_card' to={`/:${c.name}`}>
           <img
-            src={country.flags.png}
-            alt={country.name}
+            src={c.flags.png}
+            alt={c.name}
             className="country_img"
           />
-          <h3 className="country_title">{country.name}</h3>
+          <h3 className="country_title">{c.name}</h3>
         </Link>
       ))}
     </div>
