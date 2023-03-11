@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { useActions } from '../../hooks/useAction';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { Spinner } from '../Spinner';
-import './index.scss';
+import React, { useEffect } from "react";
+import { useActions } from "../../hooks/useAction";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
+import { Spinner } from "../Spinner";
+import "./index.scss";
 
 const CountriesList: React.FC = () => {
   const { countries, loading, error } = useTypedSelector(
@@ -16,18 +16,21 @@ const CountriesList: React.FC = () => {
 
   if (loading) return <Spinner />;
   if (error) return <h1>{error}</h1>;
-  console.log('render')
-
+  console.log("render");
 
   return (
-    <div>
-    {countries.map((country, idx) => (
-      <div key={idx}>
-        <img src={country.flags.png} alt={country.name} className="country_img"/>
-        <h3 className='country_title'>{country.name}</h3>
-      </div>
-    ))}
-  </div>
+    <div className="country">
+      {countries.map((country, idx) => (
+        <div key={idx} className='country_card'>
+          <img
+            src={country.flags.png}
+            alt={country.name}
+            className="country_img"
+          />
+          <h3 className="country_title">{country.name}</h3>
+        </div>
+      ))}
+    </div>
   );
 };
 
