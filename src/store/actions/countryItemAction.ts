@@ -2,11 +2,11 @@ import { Dispatch } from 'redux';
 import axios from 'axios';
 import { CountryActionTypes, CountryItemAction } from '../../types/country';
 
-export const fetchCountry = (name:string) => {
+export const fetchCountry = (name:any) => {
   return async (dispatch: Dispatch<CountryItemAction>) => {
     try {
       dispatch({ type: CountryActionTypes.FETCH_COUNTRY_REQUEST});
-      const res = await axios(`https://restcountries.com/v2/name${name}`);
+      const res = await axios(`https://restcountries.com/v2/name/${name}`);
       dispatch({
         type: CountryActionTypes.FETCH_COUNTRY_SUCCESS,
         payload: res.data

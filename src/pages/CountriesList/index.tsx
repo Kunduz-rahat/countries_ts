@@ -23,7 +23,7 @@ const CountriesList: React.FC = () => {
   return (
     <div className="country">
       {countries.map((c:any, idx:number) => (
-        <Link key={idx} className='country_card' to={`/:${c.name}`}>
+        <Link key={idx} className='country_card' to={`/${c.name}`}>
           <img
             src={c.flags.png}
             alt={c.name}
