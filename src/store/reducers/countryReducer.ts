@@ -2,10 +2,11 @@ import {
   CountryActionTypes,
   CountryItemAction,
   CountryState,
+  
 } from "../../types/country";
 
 const initialState: CountryState = {
-  country: [],
+  country:[] ,
   loading: false,
   error: "",
 };
@@ -16,11 +17,11 @@ const initialState: CountryState = {
 ): CountryState => {
   switch (action.type) {
     case CountryActionTypes.FETCH_COUNTRY_REQUEST:
-      return { loading: true, country: [], error: null };
+      return { ...state, loading:true, error:'', country:[] };
     case CountryActionTypes.FETCH_COUNTRY_ERROR:
-      return { loading: false, country: [], error: action.payload };
+      return { ...state, error:action.payload, country:[], loading:false };
     case CountryActionTypes.FETCH_COUNTRY_SUCCESS:
-      return { loading: false, country: action.payload, error: null };
+      return {...state,  loading: false, country: action.payload, error: null };
     default:
       return state;
   }

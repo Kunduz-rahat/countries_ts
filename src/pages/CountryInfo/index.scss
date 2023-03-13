@@ -1,0 +1,13 @@
+@use '../../scss/' as *;
+
+.country_info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  @include tablet{
+    grid-template-columns: 1fr;
+  }
+img{
+    width: 440px;
+    height: 300px;
+}
+}
