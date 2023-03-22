@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { Spinner } from "../../components/Spinner";
 import { useActions } from "../../hooks/useActions";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
@@ -28,45 +28,42 @@ export const CountryInfo: React.FC = () => {
           </div>
           <div>
             <h3 className="country_info_name">{c.name}</h3>
-            <div>
-              <b>Popolation:</b>
-              <span style={{marginLeft:"10px"}}>{c.population}</span>
-            </div>
-            <div>
-              <b>Region:</b>
-              <span style={{marginLeft:"10px"}}>{c.region}</span>
-            </div>
-            <div>
-              <b>Sub region:</b>
-              <span style={{marginLeft:"10px"}}>{c.subregion}</span>
-            </div>
-            <div>
-              <b>Capital:</b>
-              <span style={{marginLeft:"10px"}}>{c.capital}</span>
-            </div>
-            <div>
-              <b>Top Level Domaion:</b>
-              <span style={{marginLeft:"10px"}}>  {c.topLevelDomain}</span>
-            </div>
-            <div>
-              <b>Currency:</b>
+            <p>
+              Popolation: <span>{c.population.toLocaleString()}</span>
+            </p>
+            <p>
+              Region:<span>{c.region}</span>
+            </p>
+            <p>
+              Sub region: <span>{c.subregion}</span>
+            </p>
+            <p>
+              Capital: <span>{c.capital}</span>
+            </p>
+            <p>
+              Top Level Domaion: <span> {c.topLevelDomain}</span>
+            </p>
+            <p>
+              Currency:{" "}
               {c.currencies.map((cur: any) => (
-                <span style={{marginLeft:"10px"}} key={cur.name}>{cur.name}</span>
+                <span key={cur.name}>{cur.name}</span>
               ))}
-            </div>
+            </p>
             <div>
-              <b>Languages:</b>
+              {" "}
+              {c.languages > 1 ? <b>Languages:</b> : <b>Language:</b>}
               {c.languages.map((l: any) => (
-                <span style={{marginLeft:"10px"}} key={l.name}>{l.name}</span>
+                <span key={l.name}>{l.name}</span>
               ))}
             </div>
-            <div>
-              <b>Borders:</b>
-               {c.borders.map((b: any) => (
-                <span style={{marginLeft:"10px"}} key={b}>{b}</span>
-              ))}
-             
-            </div>
+            {c.borders && (
+              <p>
+                Borders:{" "}
+                {c.borders?.map((b: any) => (
+                  <span key={b}>{b}</span>
+                ))}
+              </p>
+            )}
           </div>
         </div>
       ))}
