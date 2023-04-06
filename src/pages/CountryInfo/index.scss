@@ -1,20 +1,50 @@
-@use '../../scss/' as *;
+@use "../../scss/" as *;
 
-.country_info{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  @include tablet{
+.country_info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 30px;
+  padding: 20px;
+  @include tablet {
     grid-template-columns: 1fr;
   }
-img{
+  img {
     width: 440px;
     height: 300px;
-}
-span{
-  margin-left: 10px;
-  font-weight: 300;
-}
-p{
-font-weight: 600;
-}
+  }
+  span {
+    margin-left: 10px;
+    font-weight: 300;
+  }
+  p {
+    font-weight: 600;
+  }
+  .borders {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row: 5px;
+    font-weight: 300;
+    width: 100%;
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+  .borders_item {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    font-weight: 300;
+  }
+  .country_area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .border_title {
+    font-weight: 600;
+  }
 }

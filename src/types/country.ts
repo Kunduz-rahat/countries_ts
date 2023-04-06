@@ -1,12 +1,12 @@
-interface ICountry{
-  name:string;
-  capital:string;
-  population:number;
-  region:string;
+// export interface ICountry{
+//   name:string;
+//   capital:string;
+//   population:number;
+//   region:string;
 
-}
+// }
 export interface CountryState {
-  country: ICountry[];
+  country: any[];
   loading: boolean;
   error: string | null;
 }
@@ -23,7 +23,7 @@ interface FetchCountyItemActonError {
 }
 interface FetchCountyItemActonSuccess {
   type: CountryActionTypes.FETCH_COUNTRY_SUCCESS;
-  payload: ICountry[];
+  payload: any[];
 }
 interface FetchCountyItemActonRequest {
   type: CountryActionTypes.FETCH_COUNTRY_REQUEST;

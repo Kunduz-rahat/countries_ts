@@ -12,6 +12,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<CountriesList />} />
         <Route path="/:name" element={<CountryInfo />} />
+      
       </Routes>
     </BrowserRouter>
   );
