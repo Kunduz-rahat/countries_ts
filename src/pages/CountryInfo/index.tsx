@@ -1,27 +1,14 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Spinner } from "../../components/Spinner";
-import { useActions } from "../../hooks/useActions";
-import { useTypedSelector } from "../../hooks/useTypedSelector";
+
 import "./index.scss";
 
 export const CountryInfo: React.FC = () => {
-  const { country, loading, error } = useTypedSelector(
-    (state) => state.country
-  );
-  console.log(country);
-  const { name }: any = useParams<{ name: string }>();
-  const { fetchCountry } = useActions();
 
-  useEffect(() => {
-    fetchCountry(name);
-  }, []);
-
-  if (loading) return <Spinner />;
-  if (error) return <h1>{error}</h1>;
   return (
     <div>
-      {country.map((c: any, idx: number) => (
+      {/* {country.map((c: any, idx: number) => (
         <div key={idx} className="country_info">
           <div>
             <img src={c.flags.png} alt={c.name} className="country_info_img" />
@@ -77,7 +64,8 @@ export const CountryInfo: React.FC = () => {
             )}
           </div>
         </div>
-      ))}
+      ))} */}
+      country info
     </div>
   );
 };

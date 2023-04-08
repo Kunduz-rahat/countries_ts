@@ -1,8 +1,16 @@
-import { applyMiddleware, createStore } from "redux";
-import thunk from 'redux-thunk'
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { rootReducer } from "./reducers";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import countryReducer from "./reducers/countrySlise";
 
+const rootReducer = combineReducers({
+  country:countryReducer,
+});
 
-export const store = createStore(rootReducer, 
-composeWithDevTools(applyMiddleware(thunk))	)
+export function setupStore() {
+  return configureStore({
+    reducer: rootReducer,
+  });
+}
+
+export type RootState = ReturnType<typeof rootReducer>;
+export type AppStore = ReturnType<typeof setupStore>;
+export type AppDispatch = AppStore["dispatch"];
