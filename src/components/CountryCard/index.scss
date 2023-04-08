@@ -1,0 +1,38 @@
+@use "../../scss/" as *;
+
+.country_title {
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    color: black;
+  }
+
+  .country_img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 25px;
+    @include tablet {
+      height: 150px;
+      object-fit: none;
+      border-radius: 20px;
+      object-position: center;
+    }
+    @include mobile {
+      height: 120px;
+      border-radius: 15px;
+    }
+  }
+  .country_img:hover {
+    transform: scale(1.1);
+  }
+  
+  .country_card {
+    border-radius: 25px;
+  }
+  .country_card:hover {
+    box-shadow: rgba(245, 245, 245, 0.2) 0 0 8px;
+  }
+  

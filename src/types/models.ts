@@ -7,7 +7,8 @@ export interface ICountry{
   topLevelDomain:string;
   borders:any[],
   languages:ILanguage[];
-  currencies:ICurrency[]
+  currencies:ICurrency[];
+  flags:IFlags
 }
 
 interface ILanguage{
@@ -16,7 +17,10 @@ interface ILanguage{
 interface ICurrency{
     name:string
 }
-
-export interface ServerResponse<T>{
-  results :T[]
+interface IFlags{
+  png:string;
+  svg:string
 }
+// export interface ServerResponse<T>{
+// data:T[]
+// }
