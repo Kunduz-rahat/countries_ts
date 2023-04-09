@@ -5,8 +5,7 @@ import { fetchCountries } from "../../store/actions/countryActions";
 import { Spinner } from "../../components/Spinner";
 import "./index.scss";
 import CountryCard from "../../components/CountryCard";
-import Search from "../../components/Search";
-
+import Controls from "../../components/Controls";
 
 const CountriesList = () => {
   const { loading, countries, error } = useAppSelector(
@@ -21,16 +20,13 @@ const CountriesList = () => {
   if (error) return <p className="text-red-500 text-center">{error}</p>;
   return (
     <div>
-        <Search/>
- <div className="country">
-    
-      {countries.map((country, idx: number) => (
-       
-        <CountryCard country={country} key={idx}/>
-      ))}
+      <Controls />
+      <div className="country">
+        {countries.map((country, idx: number) => (
+          <CountryCard country={country} key={idx} />
+        ))}
+      </div>
     </div>
-    </div>
-   
   );
 };
 
