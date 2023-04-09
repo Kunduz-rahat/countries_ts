@@ -5,6 +5,7 @@ import { fetchCountries } from "../../store/actions/countryActions";
 import { Spinner } from "../../components/Spinner";
 import "./index.scss";
 import CountryCard from "../../components/CountryCard";
+import Search from "../../components/Search";
 
 
 const CountriesList = () => {
@@ -17,17 +18,19 @@ const CountriesList = () => {
     dispatch(fetchCountries());
   }, []);
   if (loading) return <Spinner />;
-  if (error) return <p>{error}</p>;
+  if (error) return <p className="text-red-500 text-center">{error}</p>;
   return (
-    <div className="country">
+    <div>
+        <Search/>
+ <div className="country">
+    
       {countries.map((country, idx: number) => (
-        // <Link key={idx} className="country_card" to={`/${c.name}`}>
-        //   <img src={c.flags.png} alt={c.name} className="country_img" />
-        //   <h3 className="country_title">{c.name}</h3>
-        // </Link>
+       
         <CountryCard country={country} key={idx}/>
       ))}
     </div>
+    </div>
+   
   );
 };
 
