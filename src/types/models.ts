@@ -1,4 +1,4 @@
-export interface ICountry{
+export interface ICountryDetail{
   name:string;
   capital:string;
   population:number;
@@ -10,7 +10,10 @@ export interface ICountry{
   currencies:ICurrency[];
   flags:IFlags
 }
-
+export interface ICountry{
+  name:string;
+  flags:IFlags
+}
 interface ILanguage{
     name:string
 }
@@ -21,6 +24,3 @@ interface IFlags{
   png:string;
   svg:string
 }
-// export interface ServerResponse<T>{
-// data:T[]
-// }

@@ -1,7 +1,7 @@
 @use "../../scss/" as *;
 
-input{
-    border: 3px solid #ccc;
+.search {
+  border: 3px solid #ccc;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   outline: none;
@@ -10,6 +10,11 @@ input{
   margin-top: 20px;
 }
 
-input:focus {
-    border: 3px solid #555;
-  }
+.search:focus {
+  border: 3px solid #555;
+}
+input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
