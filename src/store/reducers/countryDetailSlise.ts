@@ -11,7 +11,7 @@ interface CountryDetailState {
 const initialState: CountryDetailState = {
   loading: false,
   error: "",
-  country:  null
+  country:null
 };
 
 export const countryDetailSlise = createSlice({
