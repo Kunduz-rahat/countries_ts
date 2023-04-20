@@ -5,6 +5,7 @@
   grid-template-columns: 1fr 2fr;
   column-gap: 30px;
   padding: 20px;
+  color:white;
   @include tablet {
     grid-template-columns: 1fr;
   }
@@ -16,8 +17,12 @@
     margin-left: 10px;
     font-weight: 300;
   }
+  h1{
+    letter-spacing: 4px;
+  }
   p {
     font-weight: 600;
+    letter-spacing: 1px;
   }
   .borders {
     display: grid;
@@ -33,12 +38,14 @@
     }
   }
   .borders_item {
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 8px rgba(175, 238, 238, 1);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 4px;
     font-weight: 300;
+    letter-spacing: 3px;
+    margin-left: 5px;
   }
   .country_area {
     display: grid;
@@ -46,5 +53,6 @@
   }
   .border_title {
     font-weight: 600;
+    letter-spacing: 2px;
   }
 }

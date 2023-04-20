@@ -1,23 +1,25 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchCountries } from "../../store/actions/countryActions";
-import { Spinner } from "../../components/Spinner";
-import "./index.scss";
 import CountryCard from "../../components/CountryCard";
 import Controls from "../../components/Controls";
+import { Spinner } from "../../components/Spinner";
+import "./index.scss";
 
 const CountriesList = () => {
   const { loading, countries, error } = useAppSelector(
     (state) => state.country
   );
   const dispatch = useAppDispatch();
-
+console.log('render')
   useEffect(() => {
     dispatch(fetchCountries());
-  }, []);
+  }, [dispatch]);
+
   if (loading) return <Spinner />;
+
   if (error) return <p className="text-red-500 text-center">{error}</p>;
+
   return (
     <div>
       <Controls />

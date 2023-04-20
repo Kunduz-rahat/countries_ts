@@ -15,12 +15,12 @@ const Header = () => {
         <h1>Where in the World?</h1>
       </Link>
 
-      <p onClick={toggleTheme}> {theme === "light" ? (
+      {/* <p onClick={toggleTheme}> {theme === "light" ? (
               <IoMoonOutline size="14px" />
             ) : (
               <IoMoon size="14px" />
             )}
-            <span style={{ marginLeft: "0.75rem" }}>{theme} mode</span></p>
+            <span style={{ marginLeft: "0.75rem" }}>{theme} mode</span></p> */}
     </header>
   );
 };
