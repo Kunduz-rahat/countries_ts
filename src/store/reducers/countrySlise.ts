@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ICountry } from "../../types/models";
-import { ServerResponse } from "http";
+
 
 interface CountryState {
   loading: boolean;
@@ -21,16 +21,15 @@ export const countrySlise = createSlice({
     fetching(state) {
       state.loading = true;
     },
-    fetchSuccess(state, action:PayloadAction<ICountry[]>) {
+    fetchSuccess(state, action: PayloadAction<ICountry[]>) {
       state.loading = false;
-      state.countries = action.payload
-
+      state.countries = action.payload;
     },
-    fetchError(state, action:PayloadAction<Error>) {
+    fetchError(state, action: PayloadAction<Error>) {
       state.loading = false;
-      state.error = action.payload.message
+      state.error = action.payload.message;
     },
   },
 });
 export const { fetchError, fetchSuccess, fetching } = countrySlise.actions;
-export default countrySlise.reducer
+export default countrySlise.reducer;

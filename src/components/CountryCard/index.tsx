@@ -1,6 +1,6 @@
 import React from 'react'
-import { ICountry } from '../../types/models'
 import { Link } from 'react-router-dom'
+import { ICountry } from '../../types/models'
 import "./index.scss";
 
 interface CountryCardProps{

@@ -1,10 +1,10 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import countryReducer from "./reducers/countrySlise";
-import countryDetailReducer from './reducers/countryDetailSlise'
+import countryDetailReducer from "./reducers/countryDetailSlise";
 
 const rootReducer = combineReducers({
-  country:countryReducer,
-  countryDetail:countryDetailReducer
+  country: countryReducer,
+  countryDetail: countryDetailReducer,
 });
 
 export function setupStore() {

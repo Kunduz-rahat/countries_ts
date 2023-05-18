@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchCountries } from "../../store/actions/countryActions";
 import CountryCard from "../../components/CountryCard";
@@ -11,7 +11,9 @@ const CountriesList = () => {
     (state) => state.country
   );
   const dispatch = useAppDispatch();
-console.log('render')
+  console.log("render");
+
+
   useEffect(() => {
     dispatch(fetchCountries());
   }, [dispatch]);
@@ -33,3 +35,4 @@ console.log('render')
 };
 
 export default CountriesList;
+ 
