@@ -10,6 +10,7 @@ import CountriesByAmericas from "./pages/CountriesByAmericas";
 import CountriesByOceania from "./pages/CountriesByOceania";
 import CountriesByPolar from "./pages/CountriesByPolar";
 
+
 export const App = () => {
 
   return (

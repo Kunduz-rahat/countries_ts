@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchCountries } from "../../store/actions/countryActions";
 import CountryCard from "../../components/CountryCard";
-import Controls from "../../components/Controls";
+
 import { Spinner } from "../../components/Spinner";
 import "./index.scss";
 import Search from "../../components/Search";
-import Select from "../../components/Select";
+
 
 const CountriesList = () => {
   const { loading, countries, error } = useAppSelector(
@@ -27,9 +27,9 @@ const CountriesList = () => {
 
   return (
     <div>
-      {/* <Controls /> */}
+
       <Search />
-      <Select/>
+    
       <div className="country">
         {countries.map((country, idx: number) => (
           <CountryCard country={country} key={idx} />
