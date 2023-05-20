@@ -23,6 +23,7 @@ const Header = () => {
             <NavLink to={'/africa'}>Africa</NavLink>
             <NavLink to={'/americas'}>Americas</NavLink>
             <NavLink to={'/oceania'}>Oceania</NavLink>
+            <NavLink to={'/polar'}>Polar</NavLink>
       </div>
     
     </header>
