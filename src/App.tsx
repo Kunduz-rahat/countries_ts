@@ -7,6 +7,7 @@ import CountriesByAsia from "./pages/CountriesByAsia";
 import CountriesByEurope from "./pages/CountriesByEurope";
 import CountriesByAfrica from "./pages/CountriesByAfrica";
 import CountriesByAmericas from "./pages/CountriesByAmericas";
+import CountriesByOceania from "./pages/CountriesByOceania";
 
 export const App = () => {
 
@@ -19,6 +20,7 @@ export const App = () => {
         <Route path="/europe" element={<CountriesByEurope />} />
         <Route path="/africa" element={<CountriesByAfrica />} />
         <Route path="/americas" element={<CountriesByAmericas />} />
+        <Route path="/oceania" element={<CountriesByOceania />} />
         <Route path="/:name" element={<CountryInfo />} />
       </Routes>
     </BrowserRouter>

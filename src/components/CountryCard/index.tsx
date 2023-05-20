@@ -12,6 +12,7 @@ interface CountryCardProps{
          <Link  className="country_card" to={`/${country.name}`}>
           <img src={country.flags.png} alt={country.name} className="country_img" />
           <h3 className="country_title">{country.name}</h3>
+          <div>{country.region}</div>
         </Link>
       </div>
     )

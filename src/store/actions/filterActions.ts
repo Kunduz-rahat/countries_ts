@@ -54,3 +54,29 @@ export const filterCountriesByEurope = () => {
       }
     };
   };
+
+  export const filterCountriesByOceania = () => {
+    return async (dispatch: AppDispatch) => {
+      try {
+        dispatch(fetchingFilter());
+        const response = await axios<ICountryFilter[]>(`https://restcountries.com/v2/region/oceania`);
+        dispatch(fetchFilterSuccess(response.data));
+        console.log(response.data);
+      } catch (e) {
+        dispatch(fetchFilterError(e as Error));
+      }
+    };
+  };
+
+  export const filterCountriesByPolar = () => {
+    return async (dispatch: AppDispatch) => {
+      try {
+        dispatch(fetchingFilter());
+        const response = await axios<ICountryFilter[]>(`https://restcountries.com/v2/region/polar`);
+        dispatch(fetchFilterSuccess(response.data));
+        console.log(response.data);
+      } catch (e) {
+        dispatch(fetchFilterError(e as Error));
+      }
+    };
+  };
