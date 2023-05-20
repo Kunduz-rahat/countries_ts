@@ -4,7 +4,10 @@ import './index.scss'
 
  const Filter = () => {
   return (
-    <div>Filter</div>
+    <select>
+      <option disabled>Поиск по </option>
+      
+    </select>
   )
 }
 

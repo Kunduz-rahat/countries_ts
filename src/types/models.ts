@@ -13,6 +13,7 @@ export interface ICountryDetail {
 export interface ICountry {
   name: string;
   flags: IFlags;
+  region?:string
 }
 interface ILanguage {
   name: string;

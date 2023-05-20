@@ -23,15 +23,17 @@ export const CountryInfo: React.FC = () => {
   if (error) return <p className="text-red-500 text-center">{error}</p>;
 
   return (
-    <div style={{
-      backgroundImage: `  linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.5)),url(${country?.flags?.png} )`,
-      backgroundPosition: "center",
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
-      width: "100vw",
-      height: "100vh",
-      padding: "0",
-    }} >
+    <div
+      style={{
+        backgroundImage: `  linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.3)),url(${country?.flags?.png} )`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        width: "100vw",
+        height: "100vh",
+        padding: "0",
+      }}
+    >
       {country && (
         <div className="country_info">
           <div>
@@ -55,14 +57,11 @@ export const CountryInfo: React.FC = () => {
                 <p>
                   Sub region: <span>{country?.subregion}</span>
                 </p>
-                {
-                  country?.capital && (
-                    <p>
+                {country?.capital && (
+                  <p>
                     Capital: <span>{country?.capital}</span>
                   </p>
-                  )
-                }
-              
+                )}
               </div>
               <div>
                 <p>
