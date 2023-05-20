@@ -15,6 +15,11 @@ export interface ICountry {
   flags: IFlags;
   region?:string
 }
+export interface ICountryFilter {
+  name: string;
+  flags: IFlags;
+  region?:string
+}
 interface ILanguage {
   name: string;
 }
@@ -25,3 +30,7 @@ interface IFlags {
   png: string;
   svg: string;
 }
+// export interface IFilter{
+//   region:ICountryRegion
+// }
+// export  type ICountryRegion = string

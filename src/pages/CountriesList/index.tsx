@@ -29,7 +29,7 @@ const CountriesList = () => {
     <div>
       {/* <Controls /> */}
       <Search />
-      {/* <Select/> */}
+      <Select/>
       <div className="country">
         {countries.map((country, idx: number) => (
           <CountryCard country={country} key={idx} />

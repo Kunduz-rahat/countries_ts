@@ -1,32 +1,38 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {  ICountryRegion } from "../../types/models";
+import { ICountryFilter} from "../../types/models";
+
 
 interface FilterState {
   loading: boolean;
-  region: ICountryRegion[];
+  region: ICountryFilter[];
+  error: string;
 }
 
 const initialState: FilterState = {
   loading: false,
-   region:[]
+  region: [],
+  error: "",
 };
- 
-interface FilterPayload{
 
-}
+
+
 export const filterSlise = createSlice({
   name: "filter",
   initialState,
   reducers: {
-    fetching(state) {
+    fetchingFilter(state) {
       state.loading = true;
     },
-    fetchSuccess(state, action: PayloadAction) {
+    fetchFilterSuccess(state, action: PayloadAction<ICountryFilter[]>) {
       state.loading = false;
-    //   state.region = action.payload
+      state.region = action.payload;
     },
-  
+    fetchFilterError(state, action: PayloadAction<Error>) {
+      state.loading = false;
+      state.error = action.payload.message;
+    },
   },
 });
-export const {  fetchSuccess, fetching } = filterSlise.actions;
+export const { fetchFilterError, fetchFilterSuccess, fetchingFilter } =
+  filterSlise.actions;
 export default filterSlise.reducer;

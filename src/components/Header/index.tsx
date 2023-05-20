@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { IoMoon, IoMoonOutline } from "react-icons/io5";
 
 import "./index.scss";
@@ -14,13 +14,14 @@ const Header = () => {
       <Link to={"/"}>
         <h1>Where in the World?</h1>
       </Link>
-
-      {/* <p onClick={toggleTheme}> {theme === "light" ? (
-              <IoMoonOutline size="14px" />
-            ) : (
-              <IoMoon size="14px" />
-            )}
-            <span style={{ marginLeft: "0.75rem" }}>{theme} mode</span></p> */}
+      <div>
+        
+        
+            <NavLink to={'/asia'}>Asia</NavLink>
+          
+            <NavLink to={'/europe'}>Europe</NavLink>
+      </div>
+    
     </header>
   );
 };
