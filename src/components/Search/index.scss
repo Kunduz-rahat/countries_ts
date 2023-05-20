@@ -12,6 +12,7 @@
 }
 .search_container {
   position: relative;
+ 
 }
 .search:focus {
   border: 3px solid #555;
@@ -26,6 +27,9 @@ input {
   left: 0;
   right: 0;
   height: 200px;
-  background-color: red;
-  top: 0;
+  background-color: #afeeee;
+  overflow: scroll;
+  top: 42px;
+  width: 200px;
+  padding: 15px;
 }

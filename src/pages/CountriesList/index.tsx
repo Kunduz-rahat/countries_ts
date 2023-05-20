@@ -6,27 +6,17 @@ import Controls from "../../components/Controls";
 import { Spinner } from "../../components/Spinner";
 import "./index.scss";
 import Search from "../../components/Search";
+import Select from "../../components/Select";
 
 const CountriesList = () => {
   const { loading, countries, error } = useAppSelector(
     (state) => state.country
   );
-  const [filteredCountries, setFilteredCountries] = useState(countries);
+
   const dispatch = useAppDispatch();
   console.log("render");
 
-  // const handleSearch = (search: string, region: string) => {
-  //   let data = [...countries];
-  //   // if (region) {
-  //   //   data = data.filter((country) => country.region.includes(region));
-  //   // }
-  //   if (search) {
-  //     data = data.filter((country) =>
-  //       country.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
-  //     );
-  //   }
-  //   setFilteredCountries(data);
-  // };
+ 
   useEffect(() => {
     dispatch(fetchCountries());
   }, [dispatch]);
@@ -39,6 +29,7 @@ const CountriesList = () => {
     <div>
       {/* <Controls /> */}
       <Search />
+      {/* <Select/> */}
       <div className="country">
         {countries.map((country, idx: number) => (
           <CountryCard country={country} key={idx} />
