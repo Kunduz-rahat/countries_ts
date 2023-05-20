@@ -20,6 +20,8 @@ const Header = () => {
             <NavLink to={'/asia'}>Asia</NavLink>
           
             <NavLink to={'/europe'}>Europe</NavLink>
+            <NavLink to={'/africa'}>Africa</NavLink>
+            <NavLink to={'/americas'}>Americas</NavLink>
       </div>
     
     </header>
