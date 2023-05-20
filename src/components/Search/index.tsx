@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { useInput } from "../../hooks/input";
+import { Link } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
-import "./index.scss";
+import axios from "axios";
+import { useInput } from "../../hooks/input";
 import useDebounce from "../../hooks/debounce";
 import { ICountry } from "../../types/models";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import "./index.scss";
 
 function Search() {
   const input = useInput("");
@@ -35,21 +35,20 @@ function Search() {
         <IoSearch />
         <input
           className="search_input"
-          placeholder="Search ..."
+          placeholder="Search for name..."
           type="text"
           {...input}
         />
       </div>
-      {
-        dropDown && <div className="search_countries">
-        {results.map((c) => (
-          <Link to={`/${c.name}`} key={c.name}>
-            {c.name}
-          </Link>
-        ))}
-      </div>
-      }
-      
+      {dropDown && (
+        <div className="search_countries">
+          {results.map((c) => (
+            <Link to={`/${c.name}`} key={c.name}>
+              {c.name}
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
