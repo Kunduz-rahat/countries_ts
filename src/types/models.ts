@@ -9,16 +9,17 @@ export interface ICountryDetail {
   languages?: ILanguage[];
   currencies?: ICurrency[];
   flags?: IFlags;
+  alpha2Code:string
 }
 export interface ICountry {
   name: string;
   flags: IFlags;
-  region?:string
+  region?: string;
 }
 export interface ICountryFilter {
   name: string;
   flags: IFlags;
-  region?:string
+  region?: string;
 }
 interface ILanguage {
   name: string;
@@ -30,7 +31,3 @@ interface IFlags {
   png: string;
   svg: string;
 }
-// export interface IFilter{
-//   region:ICountryRegion
-// }
-// export  type ICountryRegion = string

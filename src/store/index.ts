@@ -6,7 +6,8 @@ import filterReducer from "./reducers/filterSlice";
 const rootReducer = combineReducers({
   country: countryReducer,
   countryDetail: countryDetailReducer,
-  filter:filterReducer
+  filter: filterReducer,
+
 });
 
 export function setupStore() {
@@ -15,6 +16,6 @@ export function setupStore() {
   });
 }
 
-export type RootState = ReturnType<typeof rootReducer>; // 
+export type RootState = ReturnType<typeof rootReducer>; //
 export type AppStore = ReturnType<typeof setupStore>; // делает типы, в итоге возврщает функцию
 export type AppDispatch = AppStore["dispatch"];

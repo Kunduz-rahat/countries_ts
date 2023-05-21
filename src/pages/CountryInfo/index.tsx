@@ -1,28 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchCountryDetail} from "../../store/actions/countryDetailActions";
 import { Spinner } from "../../components/Spinner";
 import "./index.scss";
+import axios from "axios";
+import { ICountry } from "../../types/models";
+
+
 
 export const CountryInfo: React.FC = () => {
   const params = useParams<"name">();
-
+  const code = useParams<"alpha2Code">();
   const dispatch = useAppDispatch();
-
+  const [cByCode, setCByCode] = useState({})
   const { loading, country, error } = useAppSelector(
     (state) => state.countryDetail
   );
+  async function countryByCode() {
+    const res = await axios<ICountry[]>(
+      `https://restcountries.com/v2/name/${code}`
+    );
+    let searchCountry = [...res.data];
+console.log(searchCountry)
+    setCByCode(searchCountry);
+  }
 
   useEffect(() => {
     dispatch(fetchCountryDetail(params.name!));
   }, [dispatch, params.name]);
-  // useEffect(() => {
-  //   dispatch(fetchCountryDetailByCode(params.name!));
-  // }, [dispatch, params.name]);
 
 
-  if (loading) return <Spinner />;
+
+  if (loading ) return <Spinner />;
 
   if (error) return <p className="text-red-500 text-center">{error}</p>;
 
@@ -96,7 +106,7 @@ export const CountryInfo: React.FC = () => {
                 Border Countries:{" "}
                 <div className="borders">
                   {country?.borders?.map((b: any) => (
-                    <Link to={'/'}>
+                    <Link to={`/${cByCode}`}>
                     <p className="borders_item" key={b}>
                       {b}
                     </p>
