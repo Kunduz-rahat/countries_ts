@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-import { fetchCountryDetail } from "../../store/actions/countryDetailActions";
+import { fetchCountryDetail} from "../../store/actions/countryDetailActions";
 import { Spinner } from "../../components/Spinner";
 import "./index.scss";
 
@@ -17,6 +17,10 @@ export const CountryInfo: React.FC = () => {
   useEffect(() => {
     dispatch(fetchCountryDetail(params.name!));
   }, [dispatch, params.name]);
+  // useEffect(() => {
+  //   dispatch(fetchCountryDetailByCode(params.name!));
+  // }, [dispatch, params.name]);
+
 
   if (loading) return <Spinner />;
 
@@ -92,9 +96,12 @@ export const CountryInfo: React.FC = () => {
                 Border Countries:{" "}
                 <div className="borders">
                   {country?.borders?.map((b: any) => (
+                    <Link to={'/'}>
                     <p className="borders_item" key={b}>
                       {b}
                     </p>
+                    </Link>
+                    
                   ))}
                 </div>
               </div>
