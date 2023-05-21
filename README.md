@@ -2,7 +2,7 @@
 
 
 
-## [Live Demo](https://countries-39mav9ahw-kunduz-rahat.vercel.app/)
+## [Live Demo](https://countries-kfewl0kfn-kunduz-rahat.vercel.app/)
 
 
 ## 🛠 Технологии, которые использовались в разработке
