@@ -2,11 +2,9 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { fetchCountries } from "../../store/actions/countryActions";
 import CountryCard from "../../components/CountryCard";
-
 import { Spinner } from "../../components/Spinner";
-import "./index.scss";
 import Search from "../../components/Search";
-
+import "./index.scss";
 
 const CountriesList = () => {
   const { loading, countries, error } = useAppSelector(
@@ -16,7 +14,6 @@ const CountriesList = () => {
   const dispatch = useAppDispatch();
   console.log("render");
 
- 
   useEffect(() => {
     dispatch(fetchCountries());
   }, [dispatch]);
@@ -27,9 +24,8 @@ const CountriesList = () => {
 
   return (
     <div>
-
       <Search />
-    
+
       <div className="country">
         {countries.map((country, idx: number) => (
           <CountryCard country={country} key={idx} />

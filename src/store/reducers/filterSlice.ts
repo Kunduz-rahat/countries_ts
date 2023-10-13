@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ICountryFilter} from "../../types/models";
-
+import { ICountryFilter } from "../../types/models";
 
 interface FilterState {
   loading: boolean;
@@ -13,8 +12,6 @@ const initialState: FilterState = {
   region: [],
   error: "",
 };
-
-
 
 export const filterSlise = createSlice({
   name: "filter",

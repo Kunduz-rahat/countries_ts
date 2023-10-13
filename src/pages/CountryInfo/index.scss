@@ -5,7 +5,7 @@
   grid-template-columns: 1fr 2fr;
   column-gap: 30px;
   padding: 20px;
-  color:white;
+  color: white;
   @include tablet {
     grid-template-columns: 1fr;
   }
@@ -17,7 +17,7 @@
     margin-left: 10px;
     font-weight: 300;
   }
-  h1{
+  h1 {
     letter-spacing: 4px;
   }
   p {

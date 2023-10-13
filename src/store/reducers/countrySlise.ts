@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ICountry } from "../../types/models";
 
-
 interface CountryState {
   loading: boolean;
   error: string;

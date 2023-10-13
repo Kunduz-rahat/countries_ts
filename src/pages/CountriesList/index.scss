@@ -1,6 +1,5 @@
 @use "../../scss/" as *;
 
-
 .country {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -16,4 +15,3 @@
     grid-template-columns: 1fr;
   }
 }
-

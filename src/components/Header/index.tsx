@@ -2,13 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import "./index.scss";
 
 const Header = () => {
-
   return (
     <header className="header">
       <Link to={"/"}>
         <h1>Where in the World?</h1>
       </Link>
-      <div style={{display:'flex'}}>
+      <div style={{ display: "flex" }}>
         <div>
           <NavLink to={"/asia"}>Asia</NavLink>
         </div>

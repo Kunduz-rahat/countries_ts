@@ -15,6 +15,7 @@ export interface ICountry {
   name: string;
   flags: IFlags;
   region?: string;
+  
 }
 export interface ICountryFilter {
   name: string;

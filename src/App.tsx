@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CountriesList from "./pages/CountriesList";
-
 import Header from "./components/Header";
+import CountriesList from "./pages/CountriesList";
 import { CountryInfo } from "./pages/CountryInfo";
 import CountriesByAsia from "./pages/CountriesByAsia";
 import CountriesByEurope from "./pages/CountriesByEurope";
@@ -10,9 +9,7 @@ import CountriesByAmericas from "./pages/CountriesByAmericas";
 import CountriesByOceania from "./pages/CountriesByOceania";
 import CountriesByPolar from "./pages/CountriesByPolar";
 
-
 export const App = () => {
-
   return (
     <BrowserRouter>
       <Header />
